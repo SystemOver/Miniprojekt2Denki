@@ -1,6 +1,6 @@
 body{
    font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-
+ background-image: url('../../src/img/background.png');
   background-color: #c5f6f8;
 }
 
@@ -22,6 +22,7 @@ body{
 
 .my-credits-divider .p-divider-content {
   background-color: #c5f6f8;
+  border-radius: 10%;
 }
 
 .p-step .p-step-number {

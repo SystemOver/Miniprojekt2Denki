@@ -58,7 +58,6 @@ const resetAll = () => {
   localStorage.clear();
   location.reload();
 };
-
 </script>
 
 <template>
@@ -120,7 +119,7 @@ const resetAll = () => {
               </template>
             </Card>
           </div>
-          <div class="col-12 sm:col-12 md:col-6 " >
+          <div class="col-12 sm:col-12 md:col-6">
             <Card
               style="overflow: hidden"
               class="h-full shadow-3 hover:shadow-8 transition-duration-500 transition-property:all"
@@ -153,10 +152,10 @@ const resetAll = () => {
                 </p>
               </template>
               <template #footer>
-                <div >
+                <div>
                   <Button
                     label="Try Course"
-                    severity="Success"      
+                    severity="Success"
                     raised
                     @click="goToEmailCourse('Shopping')"
                   />
@@ -211,7 +210,7 @@ const resetAll = () => {
               style="overflow: hidden"
               class="h-full shadow-3 hover:shadow-8 transition-duration-500 transition-property:all"
             >
-            <template #header>
+              <template #header>
                 <img
                   src="../../src/img/Gaming.png"
                   alt="more to come"
@@ -229,10 +228,34 @@ const resetAll = () => {
                   We are working hard to bring you more courses to make you
                   safer online. Stay tuned!
                 </p>
-                <Button label="Reset all Tests" severity="danger" raised @click="resetAll()" />
+                <Button
+                  label="Reset all Tests"
+                  severity="danger"
+                  raised
+                  @click="resetAll()"
+                />
               </template>
             </Card>
           </div>
+        </div>
+      </template>
+    </Card>
+    <Divider class="my-4 my-credits-divider"> What is this? </Divider>
+    <Card class="shadow-5 card-bg mx-8">
+      <template #content>
+        <div>
+          <p>
+            "Catch the Phish?!" is a project developed by students at TU Wien to
+            help users recognize phishing attempts in various forms. The
+            application offers interactive courses where users can identify
+            common mistakes in phishing emails, fake shopping sites, and fake
+            carrier sites. By completing these courses, users can improve their
+            ability to spot phishing attempts and enhance their online security,
+            in a world where just checking the URL has become insufficient.
+            <br>
+            <br>
+            Learn more <a  target="_blank" href="https://www.cloudflare.com/de-de/learning/access-management/phishing-attack/">here</a>
+          </p>
         </div>
       </template>
     </Card>
