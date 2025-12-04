@@ -53,6 +53,12 @@ for (var k = 1; k < foundCarrierMax.value; k++) {
 if (localStorage.getItem("completedCarrierCourse") === "true") {
   completedCarrier.value = true;
 }
+
+const resetAll = () => {
+  localStorage.clear();
+  location.reload();
+};
+
 </script>
 
 <template>
@@ -205,6 +211,13 @@ if (localStorage.getItem("completedCarrierCourse") === "true") {
               style="overflow: hidden"
               class="h-full shadow-3 hover:shadow-8 transition-duration-500 transition-property:all"
             >
+            <template #header>
+                <img
+                  src="../../src/img/Gaming.png"
+                  alt="more to come"
+                  class="card-image"
+                />
+              </template>
               <template #title>
                 <p class="rubik-glitch m-0">More to come...</p>
               </template>
@@ -212,10 +225,11 @@ if (localStorage.getItem("completedCarrierCourse") === "true") {
                 <p class="m-0">stay tuned for more courses!</p>
               </template>
               <template #content>
-                <p class="m-0">
+                <p class="m-0 mb-2">
                   We are working hard to bring you more courses to make you
                   safer online. Stay tuned!
                 </p>
+                <Button label="Reset all Tests" severity="danger" raised @click="resetAll()" />
               </template>
             </Card>
           </div>
