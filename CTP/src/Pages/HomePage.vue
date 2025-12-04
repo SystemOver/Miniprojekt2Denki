@@ -14,6 +14,16 @@ var completedmail = ref(false);
 var foundMailError = ref(0);
 var foundMailMax = ref(20);
 
+for(var i =1; i<foundMailMax.value;i++){
+  if(localStorage.getItem('foundEmailSpot'+i) === 'true'){
+    foundMailError.value +=1;
+  }
+}
+
+if(localStorage.getItem('completedEmailCourse') === 'true'){
+  completedmail.value = true;
+}
+
 const goToEmailCourse = (input) => {
   router.push({ name: "test", params: { message: "" + input } });
 };

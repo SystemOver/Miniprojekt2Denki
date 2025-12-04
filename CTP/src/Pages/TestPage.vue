@@ -93,9 +93,30 @@ const hotspotStyle = (spot) => ({
 const onSpotClick = (spot) => {
   console.log(`Spot ${spot.id} clicked!`);
 
-  // hier könntest du zusätzlich noch ein Event feuern,
-  // eine Erklärung anzeigen usw.
+  if(localStorage.getItem('foundEmailSpot'+spot.id) === 'true'){
+    return; // schon gefunden
+  }
+  else
+  {
+    localStorage.setItem('foundEmailSpot'+spot.id, 'true');
+  }
+
+
 };
+
+
+const finishcourse = (flag) => {
+  if(flag === 'Email'){
+    localStorage.setItem('completedEmailCourse','true');
+  }
+  else if(flag === 'Shopping'){
+    localStorage.setItem('completedShoppingCourse','true');
+  }
+  else if(flag === 'Carrier'){
+    localStorage.setItem('completedCarrierCourse','true');
+  }
+  router.push({ name: 'home' })
+}
 </script>
 
 <template>
@@ -174,7 +195,7 @@ const onSpotClick = (spot) => {
                   <div v-if="subIndex + 2 == subspots.length">
                     <Button
                       label="Finish Test"
-                      @click="router.push({ name: 'home' })"
+                      @click="finishcourse('Email')"
                     />
                   </div>
                   <div v-else>
@@ -217,7 +238,7 @@ const onSpotClick = (spot) => {
                   <div v-if="subIndex + 2 == subspots.length">
                     <Button
                       label="Finish Test"
-                      @click="router.push({ name: 'home' })"
+                      @click="finishcourse('Shopping')"
                     />
                   </div>
                   <div v-else>
@@ -260,7 +281,7 @@ const onSpotClick = (spot) => {
                   <div v-if="subIndex + 2 == subspots.length">
                     <Button
                       label="Finish Test"
-                      @click="router.push({ name: 'home' })"
+                      @click="finishcourse('Carrier')"
                     />
                   </div>
                   <div v-else>
