@@ -29,7 +29,7 @@ var foundCarrierMax = ref(20);
 
 <template>
   <Fluid>
-    <Card class="shadow-3 card-bg">
+    <Card class="shadow-3 card-bg mx-8">
       <template #content>
         <div style="text-align: center">
           <h3 class="m-0">Welcome to:</h3>
@@ -240,6 +240,6 @@ var foundCarrierMax = ref(20);
 }
 
 .card-bg {
-  background-color: #e0ffe7;
+  background-color: #e0feff;
 }
 </style>

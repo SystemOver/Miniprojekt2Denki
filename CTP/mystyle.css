@@ -1,7 +1,16 @@
 body{
    font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  background-color: #c5f8d1;
+  background-color: #c5f6f8;
+}
+
+/*Stepper custom font weil idk iwie wierd das man das nur hier so richtig wierd machen muss*/
+.p-step .p-step-title {
+  font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.p-step .p-step-number {
+  font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .rubik-glitch {
