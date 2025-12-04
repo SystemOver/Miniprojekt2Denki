@@ -9,6 +9,21 @@ body{
   font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/*Divider text background musste auch überschrieben werden weil idk tbh */
+.my-credits-divider.p-divider-horizontal::before {
+  border-top-left-radius: 1000%;
+  border-top-right-radius: 1000%;
+  border-top-color: rgba(0, 0, 0, 0.26);
+  border-top-width: 3px;        /* Dicke */
+  /* optional auch Stil/Farbe anpassen */
+  /* border-top-style: solid; */
+  /* border-top-color: #38bdf8; */
+}
+
+.my-credits-divider .p-divider-content {
+  background-color: #c5f6f8;
+}
+
 .p-step .p-step-number {
   font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }

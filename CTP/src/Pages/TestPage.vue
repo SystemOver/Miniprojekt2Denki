@@ -174,7 +174,7 @@ const finishcourse = (flag) => {
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image" />
+                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -217,7 +217,7 @@ const finishcourse = (flag) => {
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image" />
+                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -260,7 +260,7 @@ const finishcourse = (flag) => {
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image" />
+                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
