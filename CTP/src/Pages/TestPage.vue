@@ -27,7 +27,7 @@ const EmailImages = [
   "/src/img/Emails/ABV1.png", //echt
   "/src/img/Emails/ABV2.png", //scam
   "/src/img/Emails/OUTLOOK.png", //scam
-  "/src/img/Emails/OUTLOOK2.png" //scam
+  "/src/img/Emails/OUTLOOK2.png", //scam
 ];
 
 // Koordinaten relativ (0–1) zur Bildbreite/-höhe für den E-Mail-Test
@@ -44,7 +44,7 @@ const emailSpots = [
     { id: 5, x: 0.6, y: 0.5, r: 0.04 },
     { id: 6, x: 0.75, y: 0.65, r: 0.035 },
   ],
-    [
+  [
     // image 3
     { id: 1, x: 0.22, y: 0.3, r: 0.03 },
     { id: 2, x: 0.55, y: 0.48, r: 0.04 },
@@ -56,7 +56,7 @@ const emailSpots = [
     { id: 5, x: 0.6, y: 0.5, r: 0.04 },
     { id: 6, x: 0.75, y: 0.65, r: 0.035 },
   ],
-    [
+  [
     // image 5
     { id: 1, x: 0.22, y: 0.3, r: 0.03 },
     { id: 2, x: 0.55, y: 0.48, r: 0.04 },
@@ -68,7 +68,7 @@ const emailSpots = [
     { id: 5, x: 0.6, y: 0.5, r: 0.04 },
     { id: 6, x: 0.75, y: 0.65, r: 0.035 },
   ],
-    [
+  [
     // image 7
     { id: 1, x: 0.22, y: 0.3, r: 0.03 },
     { id: 2, x: 0.55, y: 0.48, r: 0.04 },
@@ -135,30 +135,23 @@ const hotspotStyle = (spot) => ({
 const onSpotClick = (spot) => {
   console.log(`Spot ${spot.id} clicked!`);
 
-  if(localStorage.getItem('foundEmailSpot'+spot.id) === 'true'){
+  if (localStorage.getItem("foundEmailSpot" + spot.id) === "true") {
     return; // schon gefunden
+  } else {
+    localStorage.setItem("foundEmailSpot" + spot.id, "true");
   }
-  else
-  {
-    localStorage.setItem('foundEmailSpot'+spot.id, 'true');
-  }
-
-
 };
 
-
 const finishcourse = (flag) => {
-  if(flag === 'Email'){
-    localStorage.setItem('completedEmailCourse','true');
+  if (flag === "Email") {
+    localStorage.setItem("completedEmailCourse", "true");
+  } else if (flag === "Shopping") {
+    localStorage.setItem("completedShoppingCourse", "true");
+  } else if (flag === "Carrier") {
+    localStorage.setItem("completedCarrierCourse", "true");
   }
-  else if(flag === 'Shopping'){
-    localStorage.setItem('completedShoppingCourse','true');
-  }
-  else if(flag === 'Carrier'){
-    localStorage.setItem('completedCarrierCourse','true');
-  }
-  router.push({ name: 'home' })
-}
+  router.push({ name: "home" });
+};
 </script>
 
 <template>
@@ -169,9 +162,38 @@ const finishcourse = (flag) => {
   <Card class="mx-8">
     <template #content>
       <Stepper value="1" linear>
-        <StepItem value="1">
-          <Step>Introduction</Step>
-          <StepPanel v-slot="{ activateCallback }">
+        <div v-if="message === 'Email'">
+          <StepList>
+            <Step value="1">Introduction</Step>
+            <Step
+              v-for="index in emailSpots.length"
+              :value="(index + 1).toString()"
+              >Email {{ index }}
+            </Step>
+          </StepList>
+        </div>
+        <div v-else-if="message === 'Shopping'">
+          <StepList>
+            <Step value="1">Introduction</Step>
+            <Step
+              v-for="index in shoppingSpots.length"
+              :value="(index + 1).toString()"
+              >Shopping {{ index }}
+            </Step>
+          </StepList>
+        </div>
+        <div v-else-if="message === 'Carrier'">
+           <StepList>
+            <Step value="1">Introduction</Step>
+            <Step
+              v-for="index in carrierSpots.length"
+              :value="(index + 1).toString()"
+              >Carrier {{ index }}
+            </Step>
+          </StepList>
+        </div>
+        <StepPanels>
+          <StepPanel v-slot="{ activateCallback }" value="1">
             <div class="h-48">
               <p>
                 Before beginning the Test, here are some short and quick Infos
@@ -207,16 +229,20 @@ const finishcourse = (flag) => {
               <Button label="Start the Test" @click="activateCallback('2')" />
             </div>
           </StepPanel>
-        </StepItem>
-        <div v-if="message === 'Email'">
-          <div v-for="(subspots, subIndex) in emailSpots" :key="subIndex">
-            <StepItem :value="'' + (subIndex + 2)">
-              <Step>E-mail Image {{ subIndex + 1 }}</Step>
-              <StepPanel v-slot="{ activateCallback }">
+          <div v-if="message === 'Email'">
+            <div v-for="(subspots, subIndex) in emailSpots" :key="subIndex">
+              <StepPanel
+                v-slot="{ activateCallback }"
+                :value="'' + (subIndex + 2)"
+              >
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
+                    <img
+                      :src="EmailImages[subIndex]"
+                      alt=""
+                      class="image border-round-2xl"
+                    />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -234,7 +260,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex  === emailSpots.length-1">
+                  <div v-if="subIndex === emailSpots.length - 1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Email')"
@@ -248,18 +274,22 @@ const finishcourse = (flag) => {
                   </div>
                 </div>
               </StepPanel>
-            </StepItem>
+            </div>
           </div>
-        </div>
-        <div v-else-if="message === 'Shopping'">
-          <div v-for="(subspots, subIndex) in shoppingSpots" :key="subIndex">
-            <StepItem :value="'' + (subIndex + 2)">
-              <Step>Shopping Image {{ subIndex + 1 }}</Step>
-              <StepPanel v-slot="{ activateCallback }">
+          <div v-else-if="message === 'Shopping'">
+            <div v-for="(subspots, subIndex) in shoppingSpots" :key="subIndex">
+              <StepPanel
+                v-slot="{ activateCallback }"
+                :value="'' + (subIndex + 2)"
+              >
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="ShoppingImages[subIndex]" alt="" class="image border-round-2xl" />
+                    <img
+                      :src="ShoppingImages[subIndex]"
+                      alt="image "
+                      class="image border-round-2xl"
+                    />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -277,7 +307,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex == shoppingSpots.length-1">
+                  <div v-if="subIndex === shoppingSpots.length - 1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Shopping')"
@@ -291,18 +321,22 @@ const finishcourse = (flag) => {
                   </div>
                 </div>
               </StepPanel>
-            </StepItem>
+            </div>
           </div>
-        </div>
-        <div v-else-if="message === 'Carrier'">
-          <div v-for="(subspots, subIndex) in carrierSpots" :key="subIndex">
-            <StepItem :value="'' + (subIndex + 2)">
-              <Step>Carrier Image {{ subIndex + 1 }}</Step>
-              <StepPanel v-slot="{ activateCallback }">
+          <div v-else-if="message === 'Carrier'">
+            <div v-for="(subspots, subIndex) in carrierSpots" :key="subIndex">
+               <StepPanel
+                v-slot="{ activateCallback }"
+                :value="'' + (subIndex + 2)"
+              >
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="CarrierImages[subIndex]" alt="" class="image border-round-2xl" />
+                    <img
+                      :src="CarrierImages[subIndex]"
+                      alt=""
+                      class="image border-round-2xl"
+                    />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -320,7 +354,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex  == carrierSpots.length-1">
+                  <div v-if="subIndex === carrierSpots.length - 1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Carrier')"
@@ -334,9 +368,9 @@ const finishcourse = (flag) => {
                   </div>
                 </div>
               </StepPanel>
-            </StepItem>
+            </div>
           </div>
-        </div>
+        </StepPanels>
       </Stepper>
     </template>
   </Card>
