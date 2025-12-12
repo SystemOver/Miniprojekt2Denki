@@ -20,8 +20,14 @@ const props = defineProps({
 
 // Bilder für den E-Mail-Test
 const EmailImages = [
-  "/src/img/Emails/patrick.jpg",
-  "/src/img/Emails/Email.webp",
+  "/src/img/Emails/GMAIL1.png", //scam
+  "/src/img/Emails/GMAIL2.png", //scam
+  "/src/img/Emails/GMAIL3.png", //echt
+  "/src/img/Emails/GMAIL4.png", //scam
+  "/src/img/Emails/ABV1.png", //echt
+  "/src/img/Emails/ABV2.png", //scam
+  "/src/img/Emails/OUTLOOK.png", //scam
+  "/src/img/Emails/OUTLOOK2.png" //scam
 ];
 
 // Koordinaten relativ (0–1) zur Bildbreite/-höhe für den E-Mail-Test
@@ -34,6 +40,42 @@ const emailSpots = [
   ],
   [
     // image 2
+    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
+    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
+    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+  ],
+    [
+    // image 3
+    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
+    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
+    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+  ],
+  [
+    // image 4
+    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
+    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
+    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+  ],
+    [
+    // image 5
+    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
+    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
+    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+  ],
+  [
+    // image 6
+    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
+    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
+    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+  ],
+    [
+    // image 7
+    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
+    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
+    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+  ],
+  [
+    // image 8
     { id: 4, x: 0.3, y: 0.4, r: 0.03 },
     { id: 5, x: 0.6, y: 0.5, r: 0.04 },
     { id: 6, x: 0.75, y: 0.65, r: 0.035 },
@@ -192,7 +234,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex + 2 == subspots.length">
+                  <div v-if="subIndex  === emailSpots.length-1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Email')"
@@ -217,7 +259,7 @@ const finishcourse = (flag) => {
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
+                    <img :src="ShoppingImages[subIndex]" alt="" class="image border-round-2xl" />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -235,7 +277,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex + 2 == subspots.length">
+                  <div v-if="subIndex == shoppingSpots.length-1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Shopping')"
@@ -260,7 +302,7 @@ const finishcourse = (flag) => {
                 <div class="flex flex-col h-48">
                   <!--image zum anklicken-->
                   <div ref="wrapper" class="image-wrapper mx-8">
-                    <img :src="EmailImages[subIndex]" alt="" class="image border-round-2xl" />
+                    <img :src="CarrierImages[subIndex]" alt="" class="image border-round-2xl" />
 
                     <!-- unsichtbare Klickbereiche -->
                     <div
@@ -278,7 +320,7 @@ const finishcourse = (flag) => {
                     severity="secondary"
                     @click="activateCallback('' + (subIndex + 1))"
                   />
-                  <div v-if="subIndex + 2 == subspots.length">
+                  <div v-if="subIndex  == carrierSpots.length-1">
                     <Button
                       label="Finish Test"
                       @click="finishcourse('Carrier')"
