@@ -155,225 +155,230 @@ const finishcourse = (flag) => {
 </script>
 
 <template>
-  <p class="text-center rubik-glitch mt-3 mb-3" style="font-size: 350%">
-    Current Test: {{ message }}
-  </p>
-
-  <Card class="mx-8">
-    <template #content>
-      <Stepper value="1" linear>
-        <div v-if="message === 'Email'">
-          <StepList>
-            <Step value="1">Introduction</Step>
-            <Step
-              v-for="index in emailSpots.length"
-              :value="(index + 1).toString()"
-              >Email {{ index }}
-            </Step>
-          </StepList>
-        </div>
-        <div v-else-if="message === 'Shopping'">
-          <StepList>
-            <Step value="1">Introduction</Step>
-            <Step
-              v-for="index in shoppingSpots.length"
-              :value="(index + 1).toString()"
-              >Shopping {{ index }}
-            </Step>
-          </StepList>
-        </div>
-        <div v-else-if="message === 'Carrier'">
-           <StepList>
-            <Step value="1">Introduction</Step>
-            <Step
-              v-for="index in carrierSpots.length"
-              :value="(index + 1).toString()"
-              >Carrier {{ index }}
-            </Step>
-          </StepList>
-        </div>
-        <StepPanels>
-          <StepPanel v-slot="{ activateCallback }" value="1">
-            <div class="h-48">
-              <p>
-                Before beginning the Test, here are some short and quick Infos
-                that are relevant to Tests on this Site:
-              </p>
-              <h4>How the Tests works</h4>
-              <p>
-                You, the user, will be shown a list of Images below in
-                sequential order, where they look like seeminly genuine
-                {{ message }}s. However your Task is to find all the Mistakes
-                that are hidden inside.
-              </p>
-              <h4>the rules</h4>
-              <ul>
-                <li>
-                  There is no Time-Limit, so take your time and try to find all
-                  the clues
-                </li>
-                <li>
-                  Found Mistakes wont be shown/revealed during the test, but
-                  spamming the entire Image is heavily discoured for your own
-                  learning expierence
-                </li>
-                <li>you can always go back to previous Images!</li>
-                <li>
-                  after you have finished the test, on the homepage, there will
-                  be a "solution" with all the implemented "mistakes". (But we
-                  still recommend you finding them yourself :) )
-                </li>
-              </ul>
-            </div>
-            <div class="py-6">
-              <Button label="Start the Test" @click="activateCallback('2')" />
-            </div>
-          </StepPanel>
+  <div class="grid">
+    <div class="col-2"></div>
+    <Card class="col-8">
+      <template #content>
+        <p class="text-center rubik-glitch m-0" style="font-size: 350%">
+          Current Test: {{ message }}
+        </p>
+        <Stepper value="1" linear>
           <div v-if="message === 'Email'">
-            <div v-for="(subspots, subIndex) in emailSpots" :key="subIndex">
-              <StepPanel
-                v-slot="{ activateCallback }"
-                :value="'' + (subIndex + 2)"
-              >
-                <div class="flex flex-col h-48">
-                  <!--image zum anklicken-->
-                  <div ref="wrapper" class="image-wrapper mx-8">
-                    <img
-                      :src="EmailImages[subIndex]"
-                      alt=""
-                      class="image border-round-2xl"
-                    />
-
-                    <!-- unsichtbare Klickbereiche -->
-                    <div
-                      v-for="spot in subspots"
-                      :key="spot.id"
-                      class="hotspot"
-                      :style="hotspotStyle(spot)"
-                      @click="onSpotClick(spot)"
-                    />
-                  </div>
-                </div>
-                <div class="flex py-6 gap-2">
-                  <Button
-                    label="Back"
-                    severity="secondary"
-                    @click="activateCallback('' + (subIndex + 1))"
-                  />
-                  <div v-if="subIndex === emailSpots.length - 1">
-                    <Button
-                      label="Finish Test"
-                      @click="finishcourse('Email')"
-                    />
-                  </div>
-                  <div v-else>
-                    <Button
-                      label="Next"
-                      @click="activateCallback('' + (subIndex + 3))"
-                    />
-                  </div>
-                </div>
-              </StepPanel>
-            </div>
+            <StepList>
+              <Step value="1">Introduction</Step>
+              <Step
+                v-for="index in emailSpots.length"
+                :value="(index + 1).toString()"
+                >Email {{ index }}
+              </Step>
+            </StepList>
           </div>
           <div v-else-if="message === 'Shopping'">
-            <div v-for="(subspots, subIndex) in shoppingSpots" :key="subIndex">
-              <StepPanel
-                v-slot="{ activateCallback }"
-                :value="'' + (subIndex + 2)"
-              >
-                <div class="flex flex-col h-48">
-                  <!--image zum anklicken-->
-                  <div ref="wrapper" class="image-wrapper mx-8">
-                    <img
-                      :src="ShoppingImages[subIndex]"
-                      alt="image "
-                      class="image border-round-2xl"
-                    />
-
-                    <!-- unsichtbare Klickbereiche -->
-                    <div
-                      v-for="spot in subspots"
-                      :key="spot.id"
-                      class="hotspot"
-                      :style="hotspotStyle(spot)"
-                      @click="onSpotClick(spot)"
-                    />
-                  </div>
-                </div>
-                <div class="flex py-6 gap-2">
-                  <Button
-                    label="Back"
-                    severity="secondary"
-                    @click="activateCallback('' + (subIndex + 1))"
-                  />
-                  <div v-if="subIndex === shoppingSpots.length - 1">
-                    <Button
-                      label="Finish Test"
-                      @click="finishcourse('Shopping')"
-                    />
-                  </div>
-                  <div v-else>
-                    <Button
-                      label="Next"
-                      @click="activateCallback('' + (subIndex + 3))"
-                    />
-                  </div>
-                </div>
-              </StepPanel>
-            </div>
+            <StepList>
+              <Step value="1">Introduction</Step>
+              <Step
+                v-for="index in shoppingSpots.length"
+                :value="(index + 1).toString()"
+                >Shopping {{ index }}
+              </Step>
+            </StepList>
           </div>
           <div v-else-if="message === 'Carrier'">
-            <div v-for="(subspots, subIndex) in carrierSpots" :key="subIndex">
-               <StepPanel
-                v-slot="{ activateCallback }"
-                :value="'' + (subIndex + 2)"
-              >
-                <div class="flex flex-col h-48">
-                  <!--image zum anklicken-->
-                  <div ref="wrapper" class="image-wrapper mx-8">
-                    <img
-                      :src="CarrierImages[subIndex]"
-                      alt=""
-                      class="image border-round-2xl"
-                    />
-
-                    <!-- unsichtbare Klickbereiche -->
-                    <div
-                      v-for="spot in subspots"
-                      :key="spot.id"
-                      class="hotspot"
-                      :style="hotspotStyle(spot)"
-                      @click="onSpotClick(spot)"
-                    />
-                  </div>
-                </div>
-                <div class="flex py-6 gap-2">
-                  <Button
-                    label="Back"
-                    severity="secondary"
-                    @click="activateCallback('' + (subIndex + 1))"
-                  />
-                  <div v-if="subIndex === carrierSpots.length - 1">
-                    <Button
-                      label="Finish Test"
-                      @click="finishcourse('Carrier')"
-                    />
-                  </div>
-                  <div v-else>
-                    <Button
-                      label="Next"
-                      @click="activateCallback('' + (subIndex + 3))"
-                    />
-                  </div>
-                </div>
-              </StepPanel>
-            </div>
+            <StepList>
+              <Step value="1">Introduction</Step>
+              <Step
+                v-for="index in carrierSpots.length"
+                :value="(index + 1).toString()"
+                >Carrier {{ index }}
+              </Step>
+            </StepList>
           </div>
-        </StepPanels>
-      </Stepper>
-    </template>
-  </Card>
+          <StepPanels>
+            <StepPanel v-slot="{ activateCallback }" value="1">
+              <div class="h-48">
+                <p>
+                  Before beginning the Test, here are some short and quick Infos
+                  that are relevant to Tests on this Site:
+                </p>
+                <h4>How the Tests works</h4>
+                <p>
+                  You, the user, will be shown a list of Images below in
+                  sequential order, where they look like seeminly genuine
+                  {{ message }}s. However your Task is to find all the Mistakes
+                  that are hidden inside.
+                </p>
+                <h4>the rules</h4>
+                <ul>
+                  <li>
+                    There is no Time-Limit, so take your time and try to find
+                    all the clues
+                  </li>
+                  <li>
+                    Found Mistakes wont be shown/revealed during the test, but
+                    spamming the entire Image is heavily discoured for your own
+                    learning expierence
+                  </li>
+                  <li>you can always go back to previous Images!</li>
+                  <li>
+                    after you have finished the test, on the homepage, there
+                    will be a "solution" with all the implemented "mistakes".
+                    (But we still recommend you finding them yourself :) )
+                  </li>
+                </ul>
+              </div>
+              <div class="py-6">
+                <Button label="Start the Test" @click="activateCallback('2')" />
+              </div>
+            </StepPanel>
+            <div v-if="message === 'Email'">
+              <div v-for="(subspots, subIndex) in emailSpots" :key="subIndex">
+                <StepPanel
+                  v-slot="{ activateCallback }"
+                  :value="'' + (subIndex + 2)"
+                >
+                  <div class="flex flex-col h-48">
+                    <!--image zum anklicken-->
+                    <div ref="wrapper" class="image-wrapper mx-8">
+                      <img
+                        :src="EmailImages[subIndex]"
+                        alt=""
+                        class="image border-round-2xl"
+                      />
+
+                      <!-- unsichtbare Klickbereiche -->
+                      <div
+                        v-for="spot in subspots"
+                        :key="spot.id"
+                        class="hotspot"
+                        :style="hotspotStyle(spot)"
+                        @click="onSpotClick(spot)"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex py-6 gap-2">
+                    <Button
+                      label="Back"
+                      severity="secondary"
+                      @click="activateCallback('' + (subIndex + 1))"
+                    />
+                    <div v-if="subIndex === emailSpots.length - 1">
+                      <Button
+                        label="Finish Test"
+                        @click="finishcourse('Email')"
+                      />
+                    </div>
+                    <div v-else>
+                      <Button
+                        label="Next"
+                        @click="activateCallback('' + (subIndex + 3))"
+                      />
+                    </div>
+                  </div>
+                </StepPanel>
+              </div>
+            </div>
+            <div v-else-if="message === 'Shopping'">
+              <div
+                v-for="(subspots, subIndex) in shoppingSpots"
+                :key="subIndex"
+              >
+                <StepPanel
+                  v-slot="{ activateCallback }"
+                  :value="'' + (subIndex + 2)"
+                >
+                  <div class="flex flex-col h-48">
+                    <!--image zum anklicken-->
+                    <div ref="wrapper" class="image-wrapper mx-8">
+                      <img
+                        :src="ShoppingImages[subIndex]"
+                        alt="image "
+                        class="image border-round-2xl"
+                      />
+
+                      <!-- unsichtbare Klickbereiche -->
+                      <div
+                        v-for="spot in subspots"
+                        :key="spot.id"
+                        class="hotspot"
+                        :style="hotspotStyle(spot)"
+                        @click="onSpotClick(spot)"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex py-6 gap-2">
+                    <Button
+                      label="Back"
+                      severity="secondary"
+                      @click="activateCallback('' + (subIndex + 1))"
+                    />
+                    <div v-if="subIndex === shoppingSpots.length - 1">
+                      <Button
+                        label="Finish Test"
+                        @click="finishcourse('Shopping')"
+                      />
+                    </div>
+                    <div v-else>
+                      <Button
+                        label="Next"
+                        @click="activateCallback('' + (subIndex + 3))"
+                      />
+                    </div>
+                  </div>
+                </StepPanel>
+              </div>
+            </div>
+            <div v-else-if="message === 'Carrier'">
+              <div v-for="(subspots, subIndex) in carrierSpots" :key="subIndex">
+                <StepPanel
+                  v-slot="{ activateCallback }"
+                  :value="'' + (subIndex + 2)"
+                >
+                  <div class="flex flex-col h-48">
+                    <!--image zum anklicken-->
+                    <div ref="wrapper" class="image-wrapper mx-8">
+                      <img
+                        :src="CarrierImages[subIndex]"
+                        alt=""
+                        class="image border-round-2xl"
+                      />
+
+                      <!-- unsichtbare Klickbereiche -->
+                      <div
+                        v-for="spot in subspots"
+                        :key="spot.id"
+                        class="hotspot"
+                        :style="hotspotStyle(spot)"
+                        @click="onSpotClick(spot)"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex py-6 gap-2">
+                    <Button
+                      label="Back"
+                      severity="secondary"
+                      @click="activateCallback('' + (subIndex + 1))"
+                    />
+                    <div v-if="subIndex === carrierSpots.length - 1">
+                      <Button
+                        label="Finish Test"
+                        @click="finishcourse('Carrier')"
+                      />
+                    </div>
+                    <div v-else>
+                      <Button
+                        label="Next"
+                        @click="activateCallback('' + (subIndex + 3))"
+                      />
+                    </div>
+                  </div>
+                </StepPanel>
+              </div>
+            </div>
+          </StepPanels>
+        </Stepper>
+      </template>
+    </Card>
+  </div>
 </template>
 
 <style scoped>
