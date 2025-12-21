@@ -2,7 +2,22 @@ body{
    font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
  background-image: url('../../src/img/background.png');
   background-color: #c5f6f8;
+   animation: bg-scroll 120s linear infinite;
 }
+
+/* diagonal bottom-right movement */
+@keyframes bg-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    /* tweak these for speed + direction */
+    background-position: -100% -100%;
+  }
+}
+
+
+
 
 /*Stepper custom font weil idk iwie wierd das man das nur hier so richtig wierd machen muss*/
 .p-step .p-step-title {

@@ -20,65 +20,75 @@ const props = defineProps({
 
 // Bilder für den E-Mail-Test
 const EmailImages = [
-  "/src/img/Emails/GMAIL1.png", //scam
-  "/src/img/Emails/GMAIL2.png", //scam
-  "/src/img/Emails/GMAIL3.png", //echt
-  "/src/img/Emails/GMAIL4.png", //scam
-  "/src/img/Emails/ABV1.png", //echt
-  "/src/img/Emails/ABV2.png", //scam
-  "/src/img/Emails/OUTLOOK.png", //scam
-  "/src/img/Emails/OUTLOOK2.png", //scam
+  "/src/img/Emails/GMAIL1.png", //scam 1
+  "/src/img/Emails/GMAIL2.png", //scam 2
+  "/src/img/Emails/GMAIL3.png", //echt 3
+  "/src/img/Emails/GMAIL4.png", //scam 4
+  "/src/img/Emails/ABV1.png", //echt 5
+  "/src/img/Emails/ABV2.png", //scam 6
+  "/src/img/Emails/OUTLOOK.png", //scam 7
+  "/src/img/Emails/OUTLOOK2.png", //scam 8
 ];
+
+// x=> rechts/links
+// y=> oben/unten
+
+// template:
+// { id: 5, x: 0.5, y: 0.5, w: 0.1, h: 0.1 },
 
 // Koordinaten relativ (0–1) zur Bildbreite/-höhe für den E-Mail-Test
 const emailSpots = [
   [
     // image 1
-    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
-    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
-    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+    { id: 1, x: 0.27, y: 0.14, w: 0.12, h: 0.03 }, // emails adress
+    { id: 2, x: 0.53, y: 0.26, w: 0.08, h: 0.04 }, // icloud logo
+    { id: 3, x: 0.35, y: 0.5, w: 0.05, h: 0.03 }, // icloud space typo
+    { id: 4, x: 0.53, y: 0.65, w: 0.15, h: 0.04 }, // payment button
+    { id: 5, x: 0.25, y: 0.07, w: 0.05, h: 0.03 }, // weird timecode
   ],
   [
     // image 2
-    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
-    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
-    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+    { id: 6, x: 0.55, y: 0.09, w: 0.2, h: 0.03 }, // email adress
+    { id: 7, x: 0.36, y: 0.33, w: 0.07, h: 0.025 }, // [Nutzername] missing
+    { id: 8, x: 0.40, y: 0.44, w: 0.12, h: 0.05 }, // Gewinnspiel
+    { id: 9, x: 0.52, y: 0.85, w: 0.13, h: 0.05 }, // jetzt sichern knopf
   ],
   [
-    // image 3
-    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
-    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
-    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+    // image 3 alles fine also keine fehler
+    
   ],
   [
     // image 4
-    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
-    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
-    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+    { id: 10, x: 0.25, y: 0.12, w: 0.10, h: 0.03 }, // email adress
+    { id: 11, x: 0.385, y: 0.32, w: 0.04, h: 0.04 }, // server is not in plural
+    { id: 12, x: 0.33, y: 0.72, w: 0.04, h: 0.03 }, // view profile is basic link
   ],
   [
-    // image 5
-    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
-    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
-    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+    // image 5 alles fine also keine fehler
   ],
   [
     // image 6
-    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
-    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
-    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+    { id: 13, x: 0.14, y: 0.1, w: 0.13, h: 0.06 }, // email adress
+    { id: 14, x: 0.3, y: 0.3, w: 0.1, h: 0.05 }, // broken text
+    { id: 14, x: 0.5, y: 0.76, w: 0.3, h: 0.05 }, // broken text
+    { id: 14, x: 0.25, y: 0.96, w: 0.06, h: 0.03 }, // broken text
+    { id: 15, x: 0.39, y: 0.85, w: 0.2, h: 0.03 }, // wierder link
   ],
   [
     // image 7
-    { id: 1, x: 0.22, y: 0.3, r: 0.03 },
-    { id: 2, x: 0.55, y: 0.48, r: 0.04 },
-    { id: 3, x: 0.8, y: 0.72, r: 0.035 },
+    { id: 16, x: 0.51, y: 0.25, w: 0.45, h: 0.06 }, //chagpt prompt
+    { id: 16, x: 0.51, y: 0.86, w: 0.45, h: 0.045 }, //chagpt prompt
+    { id: 17, x: 0.21, y: 0.035, w: 0.038, h: 0.02 }, // wierdes datum
+    { id: 18, x: 0.29, y: 0.13, w: 0.06, h: 0.03 }, // email adresse
   ],
   [
     // image 8
-    { id: 4, x: 0.3, y: 0.4, r: 0.03 },
-    { id: 5, x: 0.6, y: 0.5, r: 0.04 },
-    { id: 6, x: 0.75, y: 0.65, r: 0.035 },
+    { id: 19, x: 0.45, y: 0.4, w: 0.08, h: 0.03 }, // [Family name]
+    { id: 19, x: 0.11, y: 0.115, w: 0.05, h: 0.015 }, // [Family name]
+    { id: 19, x: 0.06, y: 0.04, w: 0.05, h: 0.03 }, // [Family name]
+    { id: 20, x: 0.15, y: 0.15, w: 0.09, h: 0.015  }, // CC macht keinen sinn
+    { id: 21, x: 0.54, y: 0.675, w: 0.08, h: 0.03 }, // fehler im projektname
+    { id: 22, x: 0.605, y: 0.79, w: 0.08, h: 0.03 }, // download button
   ],
 ];
 
@@ -126,8 +136,8 @@ const carrierSpots = [
 const hotspotStyle = (spot) => ({
   left: spot.x * 100 + "%",
   top: spot.y * 100 + "%",
-  width: spot.r * 2 * 100 + "%",
-  height: spot.r * 2 * 100 + "%",
+  width: spot.w * 2 * 100 + "%",
+  height: spot.h * 2 * 100 + "%",
   transform: "translate(-50%, -50%)",
   color: "red",
 });
@@ -162,7 +172,7 @@ const finishcourse = (flag) => {
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
         </p>
-        <Stepper value="1" linear>
+        <Stepper value="9" linear>
           <div v-if="message === 'Email'">
             <StepList>
               <Step value="1">Introduction</Step>
@@ -397,9 +407,11 @@ const finishcourse = (flag) => {
 /* unsichtbare Klickfläche */
 .hotspot {
   position: absolute;
-  opacity: 0;
+  opacity: 70%;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 5px;
+  color: red;
+  background-color: red;
 }
 
 .silkscreen-force {
