@@ -50,16 +50,15 @@ const emailSpots = [
     // image 2
     { id: 6, x: 0.55, y: 0.09, w: 0.2, h: 0.03 }, // email adress
     { id: 7, x: 0.36, y: 0.33, w: 0.07, h: 0.025 }, // [Nutzername] missing
-    { id: 8, x: 0.40, y: 0.44, w: 0.12, h: 0.05 }, // Gewinnspiel
+    { id: 8, x: 0.4, y: 0.44, w: 0.12, h: 0.05 }, // Gewinnspiel
     { id: 9, x: 0.52, y: 0.85, w: 0.13, h: 0.05 }, // jetzt sichern knopf
   ],
   [
     // image 3 alles fine also keine fehler
-    
   ],
   [
     // image 4
-    { id: 10, x: 0.25, y: 0.12, w: 0.10, h: 0.03 }, // email adress
+    { id: 10, x: 0.25, y: 0.12, w: 0.1, h: 0.03 }, // email adress
     { id: 11, x: 0.385, y: 0.32, w: 0.04, h: 0.04 }, // server is not in plural
     { id: 12, x: 0.33, y: 0.72, w: 0.04, h: 0.03 }, // view profile is basic link
   ],
@@ -86,7 +85,7 @@ const emailSpots = [
     { id: 19, x: 0.45, y: 0.4, w: 0.08, h: 0.03 }, // [Family name]
     { id: 19, x: 0.11, y: 0.115, w: 0.05, h: 0.015 }, // [Family name]
     { id: 19, x: 0.06, y: 0.04, w: 0.05, h: 0.03 }, // [Family name]
-    { id: 20, x: 0.15, y: 0.15, w: 0.09, h: 0.015  }, // CC macht keinen sinn
+    { id: 20, x: 0.15, y: 0.15, w: 0.09, h: 0.015 }, // CC macht keinen sinn
     { id: 21, x: 0.54, y: 0.675, w: 0.08, h: 0.03 }, // fehler im projektname
     { id: 22, x: 0.605, y: 0.79, w: 0.08, h: 0.03 }, // download button
   ],
@@ -94,22 +93,50 @@ const emailSpots = [
 
 // selbes für den Shopping-Test
 const ShoppingImages = [
-  "/src/img/Shopping/shopping1.webp",
-  "/src/img/Shopping/shopping2.webp",
+  "/src/img/Shopping/amazon1.webp",
+  "/src/img/Shopping/amazon2.webp",
+  "/src/img/Shopping/APPLE1.png",
+  "/src/img/Shopping/Dirndl1.png",
+  "/src/img/Shopping/ebay1.webp",
+  "/src/img/Shopping/LIDL1.webp",
 ];
 
 const shoppingSpots = [
   [
     // image 1
-    { id: 1, x: 0.25, y: 0.35, r: 0.03 },
-    { id: 2, x: 0.5, y: 0.55, r: 0.04 },
-    { id: 3, x: 0.78, y: 0.7, r: 0.035 },
+    { id: 1, x: 0.45, y: 0.09, w: 0.35, h: 0.03 }, // link
+    { id: 2, x: 0.4, y: 0.62, w: 0.11, h: 0.03 }, // "secure server"
+    { id: 3, x: 0.51, y: 0.86, w: 0.07, h: 0.03 }, // doppelte password help
   ],
   [
     // image 2
-    { id: 4, x: 0.28, y: 0.38, r: 0.03 },
-    { id: 5, x: 0.58, y: 0.52, r: 0.04 },
-    { id: 6, x: 0.73, y: 0.68, r: 0.035 },
+    { id: 3, x: 0.25, y: 0.03, w: 0.2, h: 0.03 }, // link
+  ],
+  [
+    // image 3
+    { id: 4, x: 0.29, y: 0.08, w: 0.05, h: 0.03 }, // Watch & TV link?
+    { id: 5, x: 0.58, y: 0.08, w: 0.05, h: 0.03 }, // homepod link?
+    { id: 6, x: 0.82, y: 0.49, w: 0.04, h: 0.02 }, // Schwarzer Rabbat
+    { id: 7, x: 0.85, y: 0.6, w: 0.15, h: 0.08 }, // McBook
+  ],
+  [
+    // image 4 echt
+  ],
+  [
+    // image 5
+    { id: 8, x: 0.29, y: 0.03, w: 0.15, h: 0.03 }, // link
+    { id: 9, x: 0.4, y: 0.52, w: 0.05, h: 0.03 }, // stay signed in default
+    { id: 10, x: 0.75, y: 0.92, w: 0.06, h: 0.06 }, // no ssl certificate, therefore (i) icon top left
+  ],
+  [
+    // image 6
+    { id: 11, x: 0.05, y: 0.03, w: 0.05, h: 0.03 }, // link
+    { id: 12, x: 0.46, y: 0.07, w: 0.05, h: 0.03 }, // Heute Ausverkauf. (bro das ist kein deutsch)
+    { id: 13, x: 0.2, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 13, x: 0.4, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 13, x: 0.6, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 13, x: 0.8, y: 0.94, w: 0.05, h: 0.02 }, // insane preise
+    { id: 14, x: 0.8, y: 0.9, w: 0.05, h: 0.02 }, // inkonsitente item description
   ],
 ];
 
@@ -172,7 +199,7 @@ const finishcourse = (flag) => {
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
         </p>
-        <Stepper value="9" linear>
+        <Stepper value="7" linear>
           <div v-if="message === 'Email'">
             <StepList>
               <Step value="1">Introduction</Step>
@@ -259,7 +286,7 @@ const finishcourse = (flag) => {
                       <div
                         v-for="spot in subspots"
                         :key="spot.id"
-                        class="hotspot"
+                        class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
                         @click="onSpotClick(spot)"
                       />
@@ -309,7 +336,7 @@ const finishcourse = (flag) => {
                       <div
                         v-for="spot in subspots"
                         :key="spot.id"
-                        class="hotspot"
+                        class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
                         @click="onSpotClick(spot)"
                       />
@@ -356,7 +383,7 @@ const finishcourse = (flag) => {
                       <div
                         v-for="spot in subspots"
                         :key="spot.id"
-                        class="hotspot"
+                        class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
                         @click="onSpotClick(spot)"
                       />
@@ -417,5 +444,9 @@ const finishcourse = (flag) => {
 .silkscreen-force {
   font-family: "Silkscreen", system-ui, -apple-system, BlinkMacSystemFont,
     sans-serif;
+}
+
+.no-pointer {
+  cursor: default !important;
 }
 </style>
