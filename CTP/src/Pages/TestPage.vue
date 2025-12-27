@@ -110,53 +110,69 @@ const shoppingSpots = [
   ],
   [
     // image 2
-    { id: 3, x: 0.25, y: 0.03, w: 0.2, h: 0.03 }, // link
+    { id: 4, x: 0.25, y: 0.03, w: 0.2, h: 0.03 }, // link
   ],
   [
     // image 3
-    { id: 4, x: 0.29, y: 0.08, w: 0.05, h: 0.03 }, // Watch & TV link?
-    { id: 5, x: 0.58, y: 0.08, w: 0.05, h: 0.03 }, // homepod link?
-    { id: 6, x: 0.82, y: 0.49, w: 0.04, h: 0.02 }, // Schwarzer Rabbat
-    { id: 7, x: 0.85, y: 0.6, w: 0.15, h: 0.08 }, // McBook
+    { id: 5, x: 0.29, y: 0.08, w: 0.05, h: 0.03 }, // Watch & TV link?
+    { id: 6, x: 0.58, y: 0.08, w: 0.05, h: 0.03 }, // homepod link?
+    { id: 7, x: 0.82, y: 0.49, w: 0.04, h: 0.02 }, // Schwarzer Rabbat
+    { id: 8, x: 0.85, y: 0.6, w: 0.15, h: 0.08 }, // McBook
   ],
   [
     // image 4 echt
   ],
   [
     // image 5
-    { id: 8, x: 0.29, y: 0.03, w: 0.15, h: 0.03 }, // link
-    { id: 9, x: 0.4, y: 0.52, w: 0.05, h: 0.03 }, // stay signed in default
-    { id: 10, x: 0.75, y: 0.92, w: 0.06, h: 0.06 }, // no ssl certificate, therefore (i) icon top left
+    { id: 9, x: 0.29, y: 0.03, w: 0.15, h: 0.03 }, // link
+    { id: 10, x: 0.4, y: 0.52, w: 0.05, h: 0.03 }, // stay signed in default
+    { id: 11, x: 0.75, y: 0.92, w: 0.06, h: 0.06 }, // no ssl certificate, therefore (i) icon top left
   ],
   [
     // image 6
-    { id: 11, x: 0.05, y: 0.03, w: 0.05, h: 0.03 }, // link
-    { id: 12, x: 0.46, y: 0.07, w: 0.05, h: 0.03 }, // Heute Ausverkauf. (bro das ist kein deutsch)
-    { id: 13, x: 0.2, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
-    { id: 13, x: 0.4, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
-    { id: 13, x: 0.6, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
-    { id: 13, x: 0.8, y: 0.94, w: 0.05, h: 0.02 }, // insane preise
-    { id: 14, x: 0.8, y: 0.9, w: 0.05, h: 0.02 }, // inkonsitente item description
+    { id: 12, x: 0.05, y: 0.03, w: 0.05, h: 0.03 }, // link
+    { id: 13, x: 0.46, y: 0.07, w: 0.05, h: 0.03 }, // Heute Ausverkauf. (bro das ist kein deutsch)
+    { id: 14, x: 0.2, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 14, x: 0.4, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 14, x: 0.6, y: 0.95, w: 0.05, h: 0.03 }, // insane preise
+    { id: 14, x: 0.8, y: 0.94, w: 0.05, h: 0.02 }, // insane preise
+    { id: 15, x: 0.8, y: 0.9, w: 0.05, h: 0.02 }, // inkonsitente item description
   ],
 ];
 
 const CarrierImages = [
-  "/src/img/Carrier/carrier1.webp",
-  "/src/img/Carrier/carrier2.webp",
+  "/src/img/Carrier/DHL1.jpg",
+  "/src/img/Carrier/DPD1.jpg",
+  "/src/img/Carrier/FEDEX1.jpg",
+  "/src/img/Carrier/POST1.png",
+  "/src/img/Carrier/UPS1.jpg",
+  "/src/img/Carrier/UPS2.png",
 ];
 
 const carrierSpots = [
   [
     // image 1
-    { id: 1, x: 0.2, y: 0.4, r: 0.03 },
-    { id: 2, x: 0.52, y: 0.5, r: 0.04 },
-    { id: 3, x: 0.77, y: 0.73, r: 0.035 },
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
   ],
   [
     // image 2
-    { id: 4, x: 0.3, y: 0.45, r: 0.03 },
-    { id: 5, x: 0.6, y: 0.55, r: 0.04 },
-    { id: 6, x: 0.8, y: 0.7, r: 0.035 },
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+  ],
+  [
+    // image 3
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+  ],
+  [
+    // image 4
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+  ],
+  [
+    // image 5
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+  ],
+  [
+    // image 6
+    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
   ],
 ];
 
@@ -199,7 +215,7 @@ const finishcourse = (flag) => {
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
         </p>
-        <Stepper value="7" linear>
+        <Stepper value="2" linear>
           <div v-if="message === 'Email'">
             <StepList>
               <Step value="1">Introduction</Step>
