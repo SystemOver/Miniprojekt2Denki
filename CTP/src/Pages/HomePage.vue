@@ -43,7 +43,7 @@ if (localStorage.getItem("completedShoppingCourse") === "true") {
 
 var completedCarrier = ref(false);
 var foundCarrierError = ref(0);
-var foundCarrierMax = ref(20);
+var foundCarrierMax = ref(10);
 
 for (var k = 1; k < foundCarrierMax.value; k++) {
   if (localStorage.getItem("foundCarrierSpot" + k) === "true") {

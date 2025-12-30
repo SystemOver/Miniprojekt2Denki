@@ -141,10 +141,8 @@ const shoppingSpots = [
 ];
 
 const CarrierImages = [
-  "/src/img/Carrier/DHL1.jpg",
   "/src/img/Carrier/DPD1.jpg",
   "/src/img/Carrier/FEDEX1.jpg",
-  "/src/img/Carrier/POST1.png",
   "/src/img/Carrier/UPS1.jpg",
   "/src/img/Carrier/UPS2.png",
 ];
@@ -152,27 +150,29 @@ const CarrierImages = [
 const carrierSpots = [
   [
     // image 1
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+    { id: 1, x: 0.8, y: 0.02, w: 0.2, h: 0.02 }, // tracking id ist nicht dieselbe
+    { id: 1, x: 0.7, y: 0.656, w: 0.2, h: 0.02 }, // tracking id ist nicht dieselbe
+    { id: 2, x: 0.84, y: 0.092, w: 0.05, h: 0.02 }, //wierdes spacing
   ],
   [
     // image 2
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+    { id: 3, x: 0.5, y: 0.55, w: 0.085, h: 0.03 }, // "click here to download" 💀
+    { id: 4, x: 0.385, y: 0.55, w: 0.03, h: 0.03 }, // (R) funktioniert nicht so
+    { id: 4, x: 0.05, y: 0.41, w: 0.03, h: 0.03 }, // (R) funktioniert nicht so
+    { id: 5, x: 0.35, y: 0.06, w: 0.08, h: 0.03 }, // zwei mal manage account
+    { id: 5, x: 0.82, y: 0.01, w: 0.04, h: 0.03 }, // zwei mal manage account
   ],
   [
     // image 3
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+    { id: 6, x: 0.5, y: 0.73, w: 0.13, h: 0.03 }, // gdpr be like "you cannot force someone to accept no no"
+    { id: 7, x: 0.5, y: 0.9, w: 0.3, h: 0.06 }, // niemand wird hier explizit addressiert
+    { id: 8, x: 0.28, y: 0.36, w: 0.1, h: 0.04 }, // (R) funktioniert nicht so
+
   ],
   [
     // image 4
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
-  ],
-  [
-    // image 5
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
-  ],
-  [
-    // image 6
-    { id: 1, x: 0.5, y: 0.5, w: 0.3, h: 0.03 }, // link
+    { id: 9, x: 0.32, y: 0.23, w: 0.12, h: 0.03 }, // welcome to ups website type shi-
+    { id: 10, x: 0.12, y: 0.016, w: 0.12, h: 0.02 }, // sketchy link
   ],
 ];
 
@@ -187,31 +187,29 @@ const hotspotStyle = (spot) => ({
 
 const onSpotClick = (spot, type) => {
   console.log(`Spot ${spot.id} clicked!`);
-switch(type){
-  case "email":
-    if (localStorage.getItem("foundEmailSpot" + spot.id) === "true") {
-      return; // schon gefunden
-    } else {
-      localStorage.setItem("foundEmailSpot" + spot.id, "true");
-    }
-    break;
-  case "shopping":
-     if (localStorage.getItem("foundShoppingSpot" + spot.id) === "true") {
-      return; // schon gefunden
-    } else {
-      localStorage.setItem("foundShoppingSpot" + spot.id, "true");
-    }
-    break;
-  case "carrier":
-    if (localStorage.getItem("foundCarrierSpot" + spot.id) === "true") {
-      return; // schon gefunden
-    } else {
-      localStorage.setItem("foundCarrierSpot" + spot.id, "true");
-    }
-    break;
-
-}
-
+  switch (type) {
+    case "email":
+      if (localStorage.getItem("foundEmailSpot" + spot.id) === "true") {
+        return; // schon gefunden
+      } else {
+        localStorage.setItem("foundEmailSpot" + spot.id, "true");
+      }
+      break;
+    case "shopping":
+      if (localStorage.getItem("foundShoppingSpot" + spot.id) === "true") {
+        return; // schon gefunden
+      } else {
+        localStorage.setItem("foundShoppingSpot" + spot.id, "true");
+      }
+      break;
+    case "carrier":
+      if (localStorage.getItem("foundCarrierSpot" + spot.id) === "true") {
+        return; // schon gefunden
+      } else {
+        localStorage.setItem("foundCarrierSpot" + spot.id, "true");
+      }
+      break;
+  }
 };
 
 const finishcourse = (flag) => {
@@ -234,7 +232,7 @@ const finishcourse = (flag) => {
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
         </p>
-        <Stepper value="2" linear>
+        <Stepper value="4" linear>
           <div v-if="message === 'Email'">
             <StepList>
               <Step value="1">Introduction</Step>
@@ -323,7 +321,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot,'email')"
+                        @click="onSpotClick(spot, 'email')"
                       />
                     </div>
                   </div>
@@ -373,7 +371,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot,'shopping')"
+                        @click="onSpotClick(spot, 'shopping')"
                       />
                     </div>
                   </div>
