@@ -270,8 +270,8 @@ const finishcourse = (flag) => {
 
 <template>
   <div class="grid">
-    <div class="col-2"></div>
-    <Card class="col-8">
+    <div class="lg:col-2 sm:col-0 md:col-0"></div>
+    <Card class="lg:col-8 sm:col-12 md:col-12">
       <template #content>
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
@@ -514,8 +514,9 @@ const finishcourse = (flag) => {
   opacity: 70%;
   cursor: pointer;
   border-radius: 5px;
+  /*
   color: red;
-  background-color: red;
+  background-color: red;*/
 }
 
 .silkscreen-force {

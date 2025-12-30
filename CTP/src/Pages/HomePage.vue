@@ -62,7 +62,7 @@ const resetAll = () => {
 
 <template>
   <Fluid>
-    <Card class="shadow-3 card-bg mx-8">
+    <Card class="shadow-3 card-bg md:mx-8 sm:m-auto">
       <template #content>
         <div style="text-align: center">
           <h3 class="m-0">Welcome to:</h3>
@@ -311,6 +311,20 @@ const resetAll = () => {
               </div>
             </div>
           </div>
+        </div>
+      </template>
+    </Card>
+
+     <Divider class="my-4 my-credits-divider"> Feedback </Divider>
+
+     <Card class="shadow-5 card-bg mx-8">
+      <template #content>
+        <div>
+          <p>
+            Klemens machens des
+            <br>
+            
+          </p>
         </div>
       </template>
     </Card>
