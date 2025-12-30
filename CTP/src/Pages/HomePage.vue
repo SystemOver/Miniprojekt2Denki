@@ -12,9 +12,9 @@ const router = useRouter();
 
 var completedmail = ref(false);
 var foundMailError = ref(0);
-var foundMailMax = ref(20);
+var foundMailMax = ref(22);
 
-for (var i = 1; i < foundMailMax.value; i++) {
+for (var i = 1; i <= foundMailMax.value; i++) {
   if (localStorage.getItem("foundEmailSpot" + i) === "true") {
     foundMailError.value += 1;
   }
@@ -30,9 +30,9 @@ const goToEmailCourse = (input) => {
 
 var completedShopping = ref(false);
 var foundShoppingError = ref(0);
-var foundShoppingMax = ref(20);
+var foundShoppingMax = ref(15);
 
-for (var j = 1; j < foundShoppingMax.value; j++) {
+for (var j = 1; j <= foundShoppingMax.value; j++) {
   if (localStorage.getItem("foundShoppingSpot" + j) === "true") {
     foundShoppingError.value += 1;
   }

@@ -185,22 +185,41 @@ const hotspotStyle = (spot) => ({
   color: "red",
 });
 
-const onSpotClick = (spot) => {
+const onSpotClick = (spot, type) => {
   console.log(`Spot ${spot.id} clicked!`);
+switch(type){
+  case "email":
+    if (localStorage.getItem("foundEmailSpot" + spot.id) === "true") {
+      return; // schon gefunden
+    } else {
+      localStorage.setItem("foundEmailSpot" + spot.id, "true");
+    }
+    break;
+  case "shopping":
+     if (localStorage.getItem("foundShoppingSpot" + spot.id) === "true") {
+      return; // schon gefunden
+    } else {
+      localStorage.setItem("foundShoppingSpot" + spot.id, "true");
+    }
+    break;
+  case "carrier":
+    if (localStorage.getItem("foundCarrierSpot" + spot.id) === "true") {
+      return; // schon gefunden
+    } else {
+      localStorage.setItem("foundCarrierSpot" + spot.id, "true");
+    }
+    break;
 
-  if (localStorage.getItem("foundEmailSpot" + spot.id) === "true") {
-    return; // schon gefunden
-  } else {
-    localStorage.setItem("foundEmailSpot" + spot.id, "true");
-  }
+}
+
 };
 
 const finishcourse = (flag) => {
-  if (flag === "Email") {
+  if (flag === "email") {
     localStorage.setItem("completedEmailCourse", "true");
-  } else if (flag === "Shopping") {
+  } else if (flag === "shopping") {
     localStorage.setItem("completedShoppingCourse", "true");
-  } else if (flag === "Carrier") {
+  } else if (flag === "carrier") {
     localStorage.setItem("completedCarrierCourse", "true");
   }
   router.push({ name: "home" });
@@ -304,7 +323,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot)"
+                        @click="onSpotClick(spot,'email')"
                       />
                     </div>
                   </div>
@@ -354,7 +373,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot)"
+                        @click="onSpotClick(spot,'shopping')"
                       />
                     </div>
                   </div>
@@ -367,7 +386,7 @@ const finishcourse = (flag) => {
                     <div v-if="subIndex === shoppingSpots.length - 1">
                       <Button
                         label="Finish Test"
-                        @click="finishcourse('Shopping')"
+                        @click="finishcourse('shopping')"
                       />
                     </div>
                     <div v-else>
@@ -401,7 +420,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot)"
+                        @click="onSpotClick(spot, 'carrier')"
                       />
                     </div>
                   </div>
@@ -414,7 +433,7 @@ const finishcourse = (flag) => {
                     <div v-if="subIndex === carrierSpots.length - 1">
                       <Button
                         label="Finish Test"
-                        @click="finishcourse('Carrier')"
+                        @click="finishcourse('carrier')"
                       />
                     </div>
                     <div v-else>
