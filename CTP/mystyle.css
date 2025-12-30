@@ -1,6 +1,6 @@
 body{
    font-family: 'Silkscreen', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
- background-image: url('../../src/img/background.png');
+ background-image: url('../CTP/src/img/background.png');
   background-color: #c5f6f8;
    animation: bg-scroll 120s linear infinite;
 }

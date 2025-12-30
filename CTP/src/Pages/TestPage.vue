@@ -9,6 +9,31 @@ import Button from "primevue/button";
 import Card from "primevue/card";
 import { useRouter } from "vue-router";
 
+// image imports so that the build actually aknowledges them
+// Emails
+import GMAIL1 from "@/img/Emails/GMAIL1.png";
+import GMAIL2 from "@/img/Emails/GMAIL2.png";
+import GMAIL3 from "@/img/Emails/GMAIL3.png";
+import GMAIL4 from "@/img/Emails/GMAIL4.png";
+import ABV1 from "@/img/Emails/ABV1.png";
+import ABV2 from "@/img/Emails/ABV2.png";
+import OUTLOOK from "@/img/Emails/OUTLOOK.png";
+import OUTLOOK2 from "@/img/Emails/OUTLOOK2.png";
+
+// Shopping
+import AMZ1 from "@/img/Shopping/amazon1.webp";
+import AMZ2 from "@/img/Shopping/amazon2.webp";
+import APPLE1 from "@/img/Shopping/APPLE1.png";
+import DIRNDL1 from "@/img/Shopping/Dirndl1.png";
+import EBAY1 from "@/img/Shopping/ebay1.webp";
+import LIDL1 from "@/img/Shopping/LIDL1.webp";
+
+// Carrier
+import DPD1 from "@/img/Carrier/DPD1.jpg";
+import FEDEX1 from "@/img/Carrier/FEDEX1.jpg";
+import UPS1 from "@/img/Carrier/UPS1.jpg";
+import UPS2 from "@/img/Carrier/UPS2.png";
+
 const router = useRouter();
 
 const props = defineProps({
@@ -18,17 +43,29 @@ const props = defineProps({
   },
 });
 
-// Bilder für den E-Mail-Test
 const EmailImages = [
-  "/src/img/Emails/GMAIL1.png", //scam 1
-  "/src/img/Emails/GMAIL2.png", //scam 2
-  "/src/img/Emails/GMAIL3.png", //echt 3
-  "/src/img/Emails/GMAIL4.png", //scam 4
-  "/src/img/Emails/ABV1.png", //echt 5
-  "/src/img/Emails/ABV2.png", //scam 6
-  "/src/img/Emails/OUTLOOK.png", //scam 7
-  "/src/img/Emails/OUTLOOK2.png", //scam 8
+  GMAIL1,
+  GMAIL2,
+  GMAIL3,
+  GMAIL4,
+  ABV1,
+  ABV2,
+  OUTLOOK,
+  OUTLOOK2,
 ];
+
+/* Bilder für den E-Mail-Test
+const EmailImages = [
+  "/Miniprojekt2Denki/src/img/Emails/GMAIL1.png", //scam 1
+  "/Miniprojekt2Denki/src/img/Emails/GMAIL2.png", //scam 2
+  "/Miniprojekt2Denki/src/img/Emails/GMAIL3.png", //echt 3
+  "/Miniprojekt2Denki/src/img/Emails/GMAIL4.png", //scam 4
+  "/Miniprojekt2Denki/src/img/Emails/ABV1.png", //echt 5
+  "/Miniprojekt2Denki/src/img/Emails/ABV2.png", //scam 6
+  "/Miniprojekt2Denki/src/img/Emails/OUTLOOK.png", //scam 7
+  "/Miniprojekt2Denki/src/img/Emails/OUTLOOK2.png", //scam 8
+];
+*/
 
 // x=> rechts/links
 // y=> oben/unten
@@ -91,15 +128,19 @@ const emailSpots = [
   ],
 ];
 
+const ShoppingImages = [AMZ1, AMZ2, APPLE1, DIRNDL1, EBAY1, LIDL1];
+
+/*
 // selbes für den Shopping-Test
 const ShoppingImages = [
-  "/src/img/Shopping/amazon1.webp",
-  "/src/img/Shopping/amazon2.webp",
-  "/src/img/Shopping/APPLE1.png",
-  "/src/img/Shopping/Dirndl1.png",
-  "/src/img/Shopping/ebay1.webp",
-  "/src/img/Shopping/LIDL1.webp",
+  "/Miniprojekt2Denki/src/img/Shopping/amazon1.webp",
+  "/Miniprojekt2Denki/src/img/Shopping/amazon2.webp",
+  "/Miniprojekt2Denki/src/img/Shopping/APPLE1.png",
+  "/Miniprojekt2Denki/src/img/Shopping/Dirndl1.png",
+  "/Miniprojekt2Denki/src/img/Shopping/ebay1.webp",
+  "/Miniprojekt2Denki/src/img/Shopping/LIDL1.webp",
 ];
+*/
 
 const shoppingSpots = [
   [
@@ -140,12 +181,16 @@ const shoppingSpots = [
   ],
 ];
 
+const CarrierImages = [DPD1, FEDEX1, UPS1, UPS2];
+
+/*
 const CarrierImages = [
-  "/src/img/Carrier/DPD1.jpg",
-  "/src/img/Carrier/FEDEX1.jpg",
-  "/src/img/Carrier/UPS1.jpg",
-  "/src/img/Carrier/UPS2.png",
+  "/Miniprojekt2Denki/src/img/Carrier/DPD1.jpg",
+  "/Miniprojekt2Denki/src/img/Carrier/FEDEX1.jpg",
+  "/Miniprojekt2Denki/src/img/Carrier/UPS1.jpg",
+  "/Miniprojekt2Denki/src/img/Carrier/UPS2.png",
 ];
+*/
 
 const carrierSpots = [
   [
@@ -167,7 +212,6 @@ const carrierSpots = [
     { id: 6, x: 0.5, y: 0.73, w: 0.13, h: 0.03 }, // gdpr be like "you cannot force someone to accept no no"
     { id: 7, x: 0.5, y: 0.9, w: 0.3, h: 0.06 }, // niemand wird hier explizit addressiert
     { id: 8, x: 0.28, y: 0.36, w: 0.1, h: 0.04 }, // (R) funktioniert nicht so
-
   ],
   [
     // image 4
@@ -232,7 +276,7 @@ const finishcourse = (flag) => {
         <p class="text-center rubik-glitch m-0" style="font-size: 350%">
           Current Test: {{ message }}
         </p>
-        <Stepper value="4" linear>
+        <Stepper value="1" linear>
           <div v-if="message === 'Email'">
             <StepList>
               <Step value="1">Introduction</Step>
