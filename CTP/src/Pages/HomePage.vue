@@ -248,11 +248,6 @@ const resetAll = () => {
         
         <div>
           <p>
-            <img
-  src="https://cdn.pixabay.com/photo/2017/01/31/21/23/hacker-2029856_960_720.png"
-  width="48"
-  height="48"
-/>
             "Catch the Phish?!" is a project developed by students at TU Wien to
             help users recognize phishing attempts in various forms. The
             application offers interactive courses where users can identify
