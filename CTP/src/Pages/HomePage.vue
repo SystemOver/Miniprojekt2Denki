@@ -14,6 +14,7 @@ var completedmail = ref(false);
 var foundMailError = ref(0);
 var foundMailMax = ref(22);
 
+
 for (var i = 1; i <= foundMailMax.value; i++) {
   if (localStorage.getItem("foundEmailSpot" + i) === "true") {
     foundMailError.value += 1;
@@ -58,6 +59,7 @@ const resetAll = () => {
   localStorage.clear();
   location.reload();
 };
+
 </script>
 
 <template>
@@ -243,8 +245,14 @@ const resetAll = () => {
     <Divider class="my-4 my-credits-divider"> What is this? </Divider>
     <Card class="shadow-5 card-bg mx-8">
       <template #content>
+        
         <div>
           <p>
+            <img
+  src="https://cdn.pixabay.com/photo/2017/01/31/21/23/hacker-2029856_960_720.png"
+  width="48"
+  height="48"
+/>
             "Catch the Phish?!" is a project developed by students at TU Wien to
             help users recognize phishing attempts in various forms. The
             application offers interactive courses where users can identify
@@ -319,13 +327,65 @@ const resetAll = () => {
 
      <Card class="shadow-5 card-bg mx-8">
       <template #content>
-        <div>
-          <p>
-            Klemens machens des
-            <br>
-            
-          </p>
-        </div>
+        
+        <div class="grid">
+
+      <!-- Feedback 1 -->
+      <div class="col-12 md:col-6">
+        <Card class="shadow-3 h-full">
+          <template #content>
+            <div class="flex gap-3 align-items-start">
+
+              <Image
+                src="../../src/img/pbguy1.png"
+                alt="profile"
+                width="48"
+                height="48"
+                imageClass="border-circle"
+              />
+
+              <div class="flex-1">
+                <strong>Stefan Mallaun</strong>
+
+                <p class="m-0 text-sm">
+                  Sehr verständlich aufgebaut, hat mir geholfen Phishing besser zu erkennen.
+                </p>
+              </div>
+
+            </div>
+          </template>
+        </Card>
+      </div>
+
+      <!-- Feedback 2 -->
+      <div class="col-12 md:col-6">
+        <Card class="shadow-3 h-full">
+          <template #content>
+            <div class="flex gap-3 align-items-start">
+
+              <Image
+                src="../../src/img/hacker.png"
+                alt="profile"
+                width="48"
+                height="48"
+                imageClass="border-circle"
+              />
+
+              <div class="flex-1">
+                <strong>Hacker</strong>
+
+                <p class="m-0 text-sm">
+                  Wegen euch verlier ich Opfer!
+                </p>
+              </div>
+
+            </div>
+          </template>
+        </Card>
+      </div>
+
+    </div>
+
       </template>
     </Card>
   </Fluid>
@@ -339,6 +399,8 @@ const resetAll = () => {
   object-fit: cover;
   display: block;
 }
+
+
 
 .epic-title {
   color: #000000;
