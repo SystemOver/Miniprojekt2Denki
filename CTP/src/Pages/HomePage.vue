@@ -60,6 +60,13 @@ const resetAll = () => {
   location.reload();
 };
 
+
+
+// Images weil wir custom pfade verwenden und deswegen alles bissl wierd ist
+
+import FeedBack1 from "@/img/hacker.png";
+import FeedBack2 from "@/img/pbguy1.png";
+
 </script>
 
 <template>
@@ -332,7 +339,7 @@ const resetAll = () => {
             <div class="flex gap-3 align-items-start">
 
               <Image
-                src="../../src/img/pbguy1.png"
+                :src="FeedBack2"
                 alt="profile"
                 width="48"
                 height="48"
@@ -359,7 +366,7 @@ const resetAll = () => {
             <div class="flex gap-3 align-items-start">
 
               <Image
-                src="../../src/img/hacker.png"
+                :src="FeedBack1"
                 alt="profile"
                 width="48"
                 height="48"
