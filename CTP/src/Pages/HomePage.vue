@@ -446,7 +446,7 @@ import FeedBack5 from "@/img/pbgirl.png";
                 </div>
 
                 <p class="m-0 text-sm">
-                  Gomme sagt gebt gutes Feedback
+                  Gomme sagt gebt, gutes Feedback
                 </p>
               </div>
             </div>
