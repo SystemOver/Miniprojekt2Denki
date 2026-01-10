@@ -66,6 +66,9 @@ const resetAll = () => {
 
 import FeedBack1 from "@/img/hacker.png";
 import FeedBack2 from "@/img/pbguy1.png";
+import FeedBack3 from "@/img/falloutpb.png";
+import FeedBack4 from "@/img/gomme.png";
+import FeedBack5 from "@/img/pbgirl.png";
 
 </script>
 
@@ -327,17 +330,15 @@ import FeedBack2 from "@/img/pbguy1.png";
 
      <Divider class="my-4 my-credits-divider"> Feedback </Divider>
 
-     <Card class="shadow-5 card-bg mx-8">
-      <template #content>
-        
-        <div class="grid">
+<Card class="shadow-5 card-bg mx-8">
+  <template #content>
+    <div class="grid">
 
       <!-- Feedback 1 -->
       <div class="col-12 md:col-6">
         <Card class="shadow-3 h-full">
           <template #content>
             <div class="flex gap-3 align-items-start">
-
               <Image
                 :src="FeedBack2"
                 alt="profile"
@@ -349,11 +350,15 @@ import FeedBack2 from "@/img/pbguy1.png";
               <div class="flex-1">
                 <strong>Stefan Mallaun</strong>
 
+                <!-- Sterne -->
+                <div class="text-yellow-500 text-lg">
+                  ★ ★ ★ ★ ★
+                </div>
+
                 <p class="m-0 text-sm">
                   Sehr verständlich aufgebaut, hat mir geholfen Phishing besser zu erkennen.
                 </p>
               </div>
-
             </div>
           </template>
         </Card>
@@ -364,7 +369,6 @@ import FeedBack2 from "@/img/pbguy1.png";
         <Card class="shadow-3 h-full">
           <template #content>
             <div class="flex gap-3 align-items-start">
-
               <Image
                 :src="FeedBack1"
                 alt="profile"
@@ -376,20 +380,119 @@ import FeedBack2 from "@/img/pbguy1.png";
               <div class="flex-1">
                 <strong>Hacker</strong>
 
+                <!-- Sterne -->
+                <div class="text-yellow-500 text-lg">
+                  ★ ☆ ☆ ☆ ☆
+                </div>
+
                 <p class="m-0 text-sm">
                   Wegen euch verlier ich Opfer!
                 </p>
               </div>
+            </div>
+          </template>
+        </Card>
+      </div>
 
+      <!-- Feedback 3 -->
+      <div class="col-12 md:col-6">
+        <Card class="shadow-3 h-full">
+          <template #content>
+            <div class="flex gap-3 align-items-start">
+              <Image
+                :src="FeedBack3"
+                alt="profile"
+                width="48"
+                height="48"
+                imageClass="border-circle"
+              />
+
+              <div class="flex-1">
+                <strong>Lukas Schweiger</strong>
+
+                <!-- Sterne -->
+                <div class="text-yellow-500 text-lg">
+                  ★ ★ ★ ★ ☆
+                </div>
+
+                <p class="m-0 text-sm">
+                  Sehr cool, für mich fast zu schwer
+                </p>
+              </div>
+            </div>
+          </template>
+        </Card>
+      </div>
+
+      <!-- Feedback 4 -->
+      <div class="col-12 md:col-6">
+        <Card class="shadow-3 h-full">
+          <template #content>
+            <div class="flex gap-3 align-items-start">
+              <Image
+                :src="FeedBack4"
+                alt="profile"
+                width="48"
+                height="48"
+                imageClass="border-circle"
+              />
+
+              <div class="flex-1">
+                <strong>GommeHD</strong>
+
+                <!-- Sterne -->
+                <div class="text-yellow-500 text-lg">
+                  ★ ★ ★ ★ ★
+                </div>
+
+                <p class="m-0 text-sm">
+                  Gomme sagt gebt gutes Feedback
+                </p>
+              </div>
+            </div>
+          </template>
+        </Card>
+      </div>
+
+      <!-- Feedback 5 -->
+      <div class="col-12 md:col-6">
+        <Card class="shadow-3 h-full">
+          <template #content>
+            <div class="flex gap-3 align-items-start">
+              <Image
+                :src="FeedBack5"
+                alt="profile"
+                width="48"
+                height="48"
+                imageClass="border-circle"
+              />
+
+              <div class="flex-1">
+                <strong>Lara Meier</strong>
+
+                <!-- Sterne -->
+                <div class="text-yellow-500 text-lg">
+                  ★ ★ ★ ★ ★
+                </div>
+
+                <p class="m-0 text-sm">
+                  Endlich mal eine Webseite die das Thema angeht
+                </p>
+              </div>
             </div>
           </template>
         </Card>
       </div>
 
     </div>
+  </template>
+</Card>
 
-      </template>
-    </Card>
+
+
+
+
+
   </Fluid>
 </template>
 
