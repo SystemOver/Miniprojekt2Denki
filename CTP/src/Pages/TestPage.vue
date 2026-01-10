@@ -230,6 +230,7 @@ const hotspotStyle = (spot) => ({
 });
 
 const onSpotClick = (spot, type) => {
+  event.currentTarget.classList.add('bg-red-500');
   console.log(`Spot ${spot.id} clicked!`);
   switch (type) {
     case "email":
@@ -365,7 +366,7 @@ const finishcourse = (flag) => {
                         :key="spot.id"
                         class="hotspot no-pointer"
                         :style="hotspotStyle(spot)"
-                        @click="onSpotClick(spot, 'email')"
+                        @click=" onSpotClick(spot, 'email')"
                       />
                     </div>
                   </div>
@@ -378,7 +379,7 @@ const finishcourse = (flag) => {
                     <div v-if="subIndex === emailSpots.length - 1">
                       <Button
                         label="Finish Test"
-                        @click="finishcourse('Email')"
+                        @click="finishcourse('email')"
                       />
                     </div>
                     <div v-else>
@@ -517,6 +518,11 @@ const finishcourse = (flag) => {
   /*
   color: red;
   background-color: red;*/
+}
+
+.bg-red-500 {
+  color: red;
+  background-color: red;
 }
 
 .silkscreen-force {
