@@ -521,8 +521,11 @@ const finishcourse = (flag) => {
 }
 
 .bg-red-500 {
-  color: red;
-  background-color: red;
+  color:transparent;
+  border-color: #38bdf8;
+  border-style: dashed;
+  border-radius: 20px;
+  background-color: transparent !important;
 }
 
 .silkscreen-force {
