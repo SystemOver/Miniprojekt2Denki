@@ -476,7 +476,7 @@ import FeedBack5 from "@/img/pbgirl.png";
                 </div>
 
                 <p class="m-0 text-sm">
-                  Endlich mal eine Webseite die das Thema angeht
+                  Endlich mal eine Webseite die das Thema spielerisch angeht
                 </p>
               </div>
             </div>
