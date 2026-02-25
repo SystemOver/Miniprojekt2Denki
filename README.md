@@ -1,2 +1,2 @@
 # Miniprojekt2Denki
-skibidi ich geh crashout ( Design &amp; Criminal Thinking)
+( Design &amp; Criminal Thinking)
